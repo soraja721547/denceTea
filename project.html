@@ -90,21 +90,19 @@
             /* background-color: aqua; */
             /* width: 100vw; */
             height: 100vh;
-            background-image: url(img/coffee-left.png);
+            background-image: url(img/hot.jpg);
             background-size: cover;
             background-position: center;
             background-attachment: fixed;
         }
 
-        .bg_parallax1.active {
-            /* background-color: aqua; */
-            /* width: 100vw; */
+        /* .bg_parallax1.active {
             height: 100vh;
             background-image: url(img/coffee-right.png);
             background-size: cover;
             background-position: center;
             background-attachment: fixed;
-        }
+        } */
 
         .bg_parallax2 {
 
@@ -113,9 +111,9 @@
             height: 100vh;
             /* height: calc(100vh - 100px); */
             /* padding-top: 110px; */
-            background-image: url(img/coffee-right.png);
+            background-image: url(img/coffee.jpg);
             background-size: cover;
-            background-position: cover;
+            background-position: center;
             background-attachment: fixed;
         }
 
@@ -129,7 +127,7 @@
             /* background-color: aqua; */
             /* width: 50vw; */
             height: 100vh;
-            /* background-image: url(img/coffee-left.png); */
+            background-image: url(img/drink.jpg);
             background-size: cover;
             background-position: center;
             background-attachment: fixed;
@@ -170,15 +168,6 @@
         }
 
 
-        .bg_parallax4 {
-            /* background-color: aqua; */
-            /* width: 100vw; */
-            height: 100vh;
-            background-image: url(img/coffee.jpg);
-            background-size: cover;
-            background-position: center;
-            background-attachment: fixed;
-        }
 
         .navbar {
             /* position: fixed; */
@@ -222,7 +211,7 @@
             /*最大寬度限定*/
             margin: 0 auto;
             padding: 0 15px;
-            position: relative;
+            /* position: relative; */
         }
 
         .mini-logo {
@@ -418,14 +407,23 @@
 
 
                 <div id="bp1" class="bg_parallax1">
-                    <div class="bg_parallax2">
-                        <!-- <img class="bp2-img" src="./img/coffee-left.png" alt=""> -->
-                    </div>
-                    <div class="bg_parallax3">
-
-                    </div>
+                    <div style="background-color:rgb(253, 255, 255);border-radius:99;width:100vw;height:200px;" class="box"></div>
+                    <div style="background-color:rgb(255, 255, 255);border-radius:99;width:100vw;height:200px;" class="box"></div>
+                    <div style="background-color:rgb(255, 255, 255);border-radius:99;width:100vw;height:200px;" class="box"></div>
+                    <div style="background-color:rgb(255, 255, 255);border-radius:99;width:100vw;height:200px;" class="box"></div>
                 </div>
-
+                <div id="bp1" class="bg_parallax2">
+                    <div style="background-color:rgb(253, 255, 255);border-radius:99;width:100vw;height:200px;" class="box2"></div>
+                    <div style="background-color:rgb(255, 255, 255);border-radius:99;width:100vw;height:200px;" class="box2"></div>
+                    <div style="background-color:rgb(255, 255, 255);border-radius:99;width:100vw;height:200px;" class="box2"></div>
+                    <div style="background-color:rgb(255, 255, 255);border-radius:99;width:100vw;height:200px;" class="box2"></div>
+                </div>
+                <div id="bp1" class="bg_parallax3">
+                    <div style="background-color:rgb(253, 255, 255);border-radius:99;width:100vw;height:200px;" class="box3"></div>
+                    <div style="background-color:rgb(255, 255, 255);border-radius:99;width:100vw;height:200px;" class="box3"></div>
+                    <div style="background-color:rgb(255, 255, 255);border-radius:99;width:100vw;height:200px;" class="box3"></div>
+                    <div style="background-color:rgb(255, 255, 255);border-radius:99;width:100vw;height:200px;" class="box3"></div>
+                </div>
 
                 <img id="big-logo" class="big-logo" src="./img/logo2.png" alt="">
 
@@ -437,6 +435,7 @@
     </div>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.0.2/TweenMax.min.js"></script>
 
     <script>
         window.onload = function () {
@@ -471,7 +470,7 @@
 
 
         window.onscroll = function () {
-
+            
             scrollTop = document.documentElement.scrollTop;
             // console.log(scrollTop);
             if (document.body.scrollTop > navFixHeight || document.documentElement.scrollTop > navFixHeight) {
@@ -496,11 +495,25 @@
             if (scrollTop > window_height * 2 - 160) {
 
                 document.querySelector(".nav-pic").classList.add("up");
-
+                TweenMax.staggerTo(".box2", 2, {
+                    width: 0,
+                    ease: Bounce.easeOut,
+                    borderRadius: 0,
+                    // rotation:360,
+                }, .5)
             } else {
                 document.querySelector(".nav-pic").classList.remove("up");
             }
 
+            if (scrollTop > window_height * 3 - 160) {
+                TweenMax.staggerTo(".box3", 2, {
+                    width: 0,
+                    ease: Bounce.easeOut,
+                    borderRadius: 0,
+                    // rotation:360,
+                }, .5)
+            }
+            
             myFunction();
             picTest();
         };
@@ -511,10 +524,22 @@
                 /*當卷軸滾動超過定點時，執行以下程式*/
                 document.querySelector('.navbar').classList.add('fixed');
                 document.querySelector('#mobile-navbar').classList.add('fixed-menu');
+                TweenMax.staggerTo(".box", 2, {
+                    width: 0,
+                    ease: Bounce.easeOut,
+                    borderRadius: 0,
+                    // rotation:360,
+                }, .5)
+                
             } else {
                 // console.log("87");
                 document.querySelector('.navbar').classList.remove('fixed');
                 document.querySelector('#mobile-navbar').classList.remove('fixed-menu');
+                //                 TweenMax.staggerFrom(".box",2,{
+                //     ease:Power4.easeIn,
+                //     borderRadius:99,
+                //     // rotation:360,
+                // },1)
             }
         }
         function picTest() {
@@ -524,9 +549,17 @@
         }
 
     </script>
-
-
-
+    <!-- ************************ -->
+    <!-- *   TweenMax             -->
+    <!-- ************************ -->
+    <!-- <script>
+TweenMax.staggerTo(".box",2,{
+    x:1700,
+    ease:Power4.easeIn,
+    borderRadius:99,
+    // rotation:360,
+},1)
+</script> -->
 </body>
 
 </html>
