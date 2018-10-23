@@ -90,11 +90,32 @@
         .bg_parallax1 {
             /* background-color: aqua; */
             /* width: 100vw; */
+            /* padding-top: 110px;  */
+            position: relative;
             height: 100vh;
             background-image: url(img/hot.jpg);
             background-size: cover;
             background-position: center;
             background-attachment: fixed;
+        }
+
+        #bp1.fixed {
+            padding-top: 110px;
+        }
+
+        .box {
+            position: relative;
+            z-index: 5;
+        }
+
+        .box2 {
+            position: relative;
+            z-index: 5;
+        }
+
+        .box3 {
+            position: relative;
+            z-index: 5;
         }
 
         /* .bg_parallax1.active {
@@ -106,7 +127,7 @@
         } */
 
         .bg_parallax2 {
-
+            position: relative;
             /* background-color: aqua; */
             /* width: 50vw; */
             height: 100vh;
@@ -135,9 +156,7 @@
             background-attachment: fixed;
         }
 
-        .box3 {
-            z-index: 2;
-        }
+
 
         .bg_parallax_box {
             display: flex;
@@ -230,7 +249,6 @@
             top: 0;
             /* transform: translate(-80%, 0%); */
             transition: 2s;
-
         }
 
         .mini-logo img {
@@ -334,7 +352,7 @@
         }
 
         .up {
-            top: 0;
+            top: 25px;
         }
 
         .nav-a-1:hover {
@@ -375,18 +393,20 @@
     <div id="body_id">
 
         <div class="bg-img"></div>
-        <div>
-            <nav class="navbar  animated fadeInLeftBig">
+        
+            <nav class="navbar animated fadeInLeftBig">
 
                 <div class="container">
-                    <div id="mini-logo" class="mini-logo">
 
-                        <img src="./img/logo1.png" alt="">
+                    <div id="mini-logo" class="mini-logo">
+                        <a href="https://soraja721547.github.io/project.html">
+                            <img src="./img/logo1.png" alt="">
+                        </a>
                     </div>
                     <div class="nav-a">
-                        <a class="nav-a-1 animated rubberBand delay-1s " href=""><b>店長推薦</b></a>
-                        <a class="nav-a-2 animated rubberBand delay-2s " href=""><b>飲品介紹</b></a>
-                        <a class="nav-a-3 animated rubberBand delay-3s " href=""><b>地理位置</b></a>
+                        <a class="nav-a-1 animated rubberBand delay-1s " href=""><b>冬日推薦</b></a>
+                        <a class="nav-a-2 animated rubberBand delay-2s " href=""><b>口加口非</b></a>
+                        <a class="nav-a-3 animated rubberBand delay-3s " href=""><b>夏日涼伴</b></a>
                         <a class="nav-a-4 animated rubberBand delay-4s " href=""><b>關於我們</b></a>
                     </div>
                     <div class="nav-pic"></div>
@@ -400,9 +420,9 @@
                             <i class="fas fa-bars"></i>
                         </div> -->
                 <ul id="mobile-navbar" class="mobile-navbar animated fadeInDown">
-                    <li><a href="#"><b>| 店長推薦 |</b></a> </li>
-                    <li><a href="#"><b>| 飲品介紹 |</b></a> </li>
-                    <li><a href="#"><b>| 地理位置 |</b></a> </li>
+                    <li><a href="#"><b>| 冬日推薦 |</b></a> </li>
+                    <li><a href="#"><b>| 口加口非 |</b></a> </li>
+                    <li><a href="#"><b>| 夏日涼伴 |</b></a> </li>
                     <li><a href="#"><b>| 關於我們 |</b></a> </li>
                 </ul>
 
@@ -413,13 +433,13 @@
 
 
                 <div id="bp1" class="bg_parallax1">
-                    
+
                     <div style="background-color:rgb(253, 255, 255);border-radius:99;width:100vw;height:200px;" class="box"></div>
                     <div style="background-color:rgb(255, 255, 255);border-radius:99;width:100vw;height:200px;" class="box"></div>
                     <div style="background-color:rgb(255, 255, 255);border-radius:99;width:100vw;height:200px;" class="box"></div>
                     <div style="background-color:rgb(255, 255, 255);border-radius:99;width:100vw;height:200px;" class="box"></div>
                     <div style="background-color:rgb(255, 255, 255);border-radius:99;width:100vw;height:200px;" class="box"></div>
-                    <img class="menu" style="position:absolute;left:20%;top:197%;width:60%" src="./img/drink-menu.png"
+                    <img class="menu1" style="position:absolute;left:25%;top:12.5%;width:50%" src="./img/hot-menu.png"
                         alt="">
                 </div>
                 <div id="bp2" class="bg_parallax2">
@@ -428,7 +448,7 @@
                     <div style="background-color:rgb(255, 255, 255);border-radius:99;width:100vw;height:200px;" class="box2"></div>
                     <div style="background-color:rgb(255, 255, 255);border-radius:99;width:100vw;height:200px;" class="box2"></div>
                     <div style="background-color:rgb(255, 255, 255);border-radius:99;width:100vw;height:200px;" class="box2"></div>
-                    <img class="menu" style="position:absolute;left:20%;top:102.5%;width:60%" src="./img/drink-menu.png"
+                    <img class="menu2" style="position:absolute;left:25%;top:12.5%;width:50%" src="./img/coffee-menu.png"
                         alt="">
                 </div>
                 <div id="bp3" class="bg_parallax3">
@@ -437,17 +457,30 @@
                     <div style="background-color:rgb(255, 255, 255);border-radius:99;width:100vw;height:200px;" class="box3"></div>
                     <div style="background-color:rgb(255, 255, 255);border-radius:99;width:100vw;height:200px;" class="box3"></div>
                     <div style="background-color:rgb(255, 255, 255);border-radius:99;width:100vw;height:200px;" class="box3"></div>
-                    <img class="menu" style="position:absolute;left:20%;bottom:7%;width:60%" src="./img/drink-menu.png"
+                    <img class="menu3" style="position:absolute;left:25%;top:12.5%;width:50%" src="./img/drink-menu.png"
                         alt="">
                 </div>
 
                 <img id="big-logo" class="big-logo" src="./img/logo2.png" alt="">
 
+                <div class="about">
+                    <div class="svg"></div>
+                    <div class="icon">
 
+                    </div>
 
+                    <div class="dance">舞</div>
+                    <div class="dance">茶</div>
+                    <div class="dance">萱</div>
+
+                    <div class="history"></div>
+                </div>
+                <div class="footer">
+
+                </div>
             </div>
 
-        </div>
+        
     </div>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.0.2/TweenMax.min.js"></script>
@@ -462,14 +495,14 @@
         }
         var body = document.querySelector('body');
         var logoM = document.querySelector("#logo-m");
-        var bp1 = document.querySelector('#bp1')
+        var bp1 = document.querySelector('.bg_parallax1')
         logoM.onclick = function () {
             // console.log(logoM);
             // 當按鈕按下去時,將選單切換(toggle) Class 'active'
             document.querySelector(".mobile-navbar").classList.toggle('active');
         }
         bp1.onclick = function () {
-            document.querySelector('.bg_parallax1').classList.toggle('active')
+            // document.querySelector('.bg_parallax1').classList.toggle('active')
         }
 
         var bigLogo = document.querySelector('#big-logo');
@@ -527,19 +560,13 @@
                     borderRadius: 0,
                     // rotation:360,
                 }, .5)
-                .To(".menu", 2, {
-                opacity: 1,
-                x:1700,
-                // ease: Power2.easeOut,
-                // borderRadius: 0,
-                rotation:360,
-                }, .5)
-                
+
+
             }
-            
-        
-        myFunction();
-        picTest();
+
+
+            myFunction();
+            picTest();
         };
 
         function myFunction() {
@@ -548,22 +575,26 @@
                 /*當卷軸滾動超過定點時，執行以下程式*/
                 document.querySelector('.navbar').classList.add('fixed');
                 document.querySelector('#mobile-navbar').classList.add('fixed-menu');
+                document.querySelector('#bp1').classList.add('fixed');
                 TweenMax.staggerTo(".box", 2, {
                     width: 0,
                     ease: Power2.easeOut,
                     borderRadius: 0,
                     // rotation:360,
                 }, .5)
+                // .To(".menu", 2, {
+                //     opacity: 1,
+                //     x: 1700,
+                //     // ease: Power2.easeOut,
+                //     // borderRadius: 0,
+                //     rotation: 360,
+                // }, .5)
 
             } else {
                 // console.log("87");
                 document.querySelector('.navbar').classList.remove('fixed');
                 document.querySelector('#mobile-navbar').classList.remove('fixed-menu');
-                //                 TweenMax.staggerFrom(".box",2,{
-                //     ease:Power4.easeIn,
-                //     borderRadius:99,
-                //     // rotation:360,
-                // },1)
+                document.querySelector('#bp1').classList.remove('fixed');
             }
         }
         function picTest() {
@@ -583,7 +614,7 @@
 //     borderRadius:99,
 //     // rotation:360,
 // },1)
-</script>
+    </script>
 </body>
 
 </html>
