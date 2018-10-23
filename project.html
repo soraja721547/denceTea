@@ -127,11 +127,16 @@
         .bg_parallax3 {
             /* background-color: aqua; */
             /* width: 50vw; */
+            position: relative;
             height: 100vh;
-            background-image: url(img/drink.jpg);
+            background-image: url(img/drink.png);
             background-size: cover;
             background-position: center;
             background-attachment: fixed;
+        }
+
+        .box3 {
+            z-index: 2;
         }
 
         .bg_parallax_box {
@@ -408,22 +413,32 @@
 
 
                 <div id="bp1" class="bg_parallax1">
+                    
                     <div style="background-color:rgb(253, 255, 255);border-radius:99;width:100vw;height:200px;" class="box"></div>
                     <div style="background-color:rgb(255, 255, 255);border-radius:99;width:100vw;height:200px;" class="box"></div>
                     <div style="background-color:rgb(255, 255, 255);border-radius:99;width:100vw;height:200px;" class="box"></div>
                     <div style="background-color:rgb(255, 255, 255);border-radius:99;width:100vw;height:200px;" class="box"></div>
+                    <div style="background-color:rgb(255, 255, 255);border-radius:99;width:100vw;height:200px;" class="box"></div>
+                    <img class="menu" style="position:absolute;left:20%;top:197%;width:60%" src="./img/drink-menu.png"
+                        alt="">
                 </div>
-                <div id="bp1" class="bg_parallax2">
+                <div id="bp2" class="bg_parallax2">
                     <div style="background-color:rgb(253, 255, 255);border-radius:99;width:100vw;height:200px;" class="box2"></div>
                     <div style="background-color:rgb(255, 255, 255);border-radius:99;width:100vw;height:200px;" class="box2"></div>
                     <div style="background-color:rgb(255, 255, 255);border-radius:99;width:100vw;height:200px;" class="box2"></div>
                     <div style="background-color:rgb(255, 255, 255);border-radius:99;width:100vw;height:200px;" class="box2"></div>
+                    <div style="background-color:rgb(255, 255, 255);border-radius:99;width:100vw;height:200px;" class="box2"></div>
+                    <img class="menu" style="position:absolute;left:20%;top:102.5%;width:60%" src="./img/drink-menu.png"
+                        alt="">
                 </div>
-                <div id="bp1" class="bg_parallax3">
+                <div id="bp3" class="bg_parallax3">
                     <div style="background-color:rgb(253, 255, 255);border-radius:99;width:100vw;height:200px;" class="box3"></div>
                     <div style="background-color:rgb(255, 255, 255);border-radius:99;width:100vw;height:200px;" class="box3"></div>
                     <div style="background-color:rgb(255, 255, 255);border-radius:99;width:100vw;height:200px;" class="box3"></div>
                     <div style="background-color:rgb(255, 255, 255);border-radius:99;width:100vw;height:200px;" class="box3"></div>
+                    <div style="background-color:rgb(255, 255, 255);border-radius:99;width:100vw;height:200px;" class="box3"></div>
+                    <img class="menu" style="position:absolute;left:20%;bottom:7%;width:60%" src="./img/drink-menu.png"
+                        alt="">
                 </div>
 
                 <img id="big-logo" class="big-logo" src="./img/logo2.png" alt="">
@@ -434,7 +449,6 @@
 
         </div>
     </div>
-
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.0.2/TweenMax.min.js"></script>
 
@@ -471,7 +485,7 @@
 
 
         window.onscroll = function () {
-            
+
             scrollTop = document.documentElement.scrollTop;
             // console.log(scrollTop);
             if (document.body.scrollTop > navFixHeight || document.documentElement.scrollTop > navFixHeight) {
@@ -498,7 +512,7 @@
                 document.querySelector(".nav-pic").classList.add("up");
                 TweenMax.staggerTo(".box2", 2, {
                     width: 0,
-                    ease: Bounce.easeOut,
+                    ease: Power2.easeOut,
                     borderRadius: 0,
                     // rotation:360,
                 }, .5)
@@ -509,14 +523,23 @@
             if (scrollTop > window_height * 3 - 160) {
                 TweenMax.staggerTo(".box3", 2, {
                     width: 0,
-                    ease: Bounce.easeOut,
+                    ease: Power2.easeOut,
                     borderRadius: 0,
                     // rotation:360,
                 }, .5)
+                .To(".menu", 2, {
+                opacity: 1,
+                x:1700,
+                // ease: Power2.easeOut,
+                // borderRadius: 0,
+                rotation:360,
+                }, .5)
+                
             }
             
-            myFunction();
-            picTest();
+        
+        myFunction();
+        picTest();
         };
 
         function myFunction() {
@@ -527,11 +550,11 @@
                 document.querySelector('#mobile-navbar').classList.add('fixed-menu');
                 TweenMax.staggerTo(".box", 2, {
                     width: 0,
-                    ease: Bounce.easeOut,
+                    ease: Power2.easeOut,
                     borderRadius: 0,
                     // rotation:360,
                 }, .5)
-                
+
             } else {
                 // console.log("87");
                 document.querySelector('.navbar').classList.remove('fixed');
@@ -553,14 +576,14 @@
     <!-- ************************ -->
     <!-- *   TweenMax             -->
     <!-- ************************ -->
-    <!-- <script>
-TweenMax.staggerTo(".box",2,{
-    x:1700,
-    ease:Power4.easeIn,
-    borderRadius:99,
-    // rotation:360,
-},1)
-</script> -->
+    <script>
+// TweenMax.staggerTo(".menu",2,{
+//     x:1700,
+//     ease:Power4.easeIn,
+//     borderRadius:99,
+//     // rotation:360,
+// },1)
+</script>
 </body>
 
 </html>
