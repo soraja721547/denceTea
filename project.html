@@ -93,14 +93,17 @@
             /* padding-top: 110px;  */
             position: relative;
             height: 100vh;
-            background-image: url(img/hot.jpg);
+            background-image: url(img/coffee.jpg);
             background-size: cover;
             background-position: center;
-            background-attachment: fixed;
+            background-attachment:fixed;
         }
 
-        #bp1.fixed {
-            padding-top: 110px;
+        .bg_parallax1.active {
+            /* position: relative;
+            padding-top: 110px; */
+            /* height: calc(100vh - 110px); */
+            margin-top: 110px;
         }
 
         .box {
@@ -133,7 +136,7 @@
             height: 100vh;
             /* height: calc(100vh - 100px); */
             /* padding-top: 110px; */
-            background-image: url(img/coffee.jpg);
+            background-image: url(img/hot.jpg);
             background-size: cover;
             background-position: center;
             background-attachment: fixed;
@@ -404,8 +407,8 @@
                         </a>
                     </div>
                     <div class="nav-a">
-                        <a class="nav-a-1 animated rubberBand delay-1s " href=""><b>冬日推薦</b></a>
-                        <a class="nav-a-2 animated rubberBand delay-2s " href=""><b>咖啡</b></a>
+                        <a class="nav-a-1 animated rubberBand delay-1s " href=""><b>嚴選咖啡</b></a>
+                        <a class="nav-a-2 animated rubberBand delay-2s " href=""><b>冬日推薦</b></a>
                         <a class="nav-a-3 animated rubberBand delay-3s " href=""><b>夏日涼伴</b></a>
                         <a class="nav-a-4 animated rubberBand delay-4s " href=""><b>關於我們</b></a>
                     </div>
@@ -420,8 +423,8 @@
                             <i class="fas fa-bars"></i>
                         </div> -->
                 <ul id="mobile-navbar" class="mobile-navbar animated fadeInDown">
+                    <li><a href="#"><b>| 嚴選咖啡 |</b></a> </li>
                     <li><a href="#"><b>| 冬日推薦 |</b></a> </li>
-                    <li><a href="#"><b>| 咖啡 |</b></a> </li>
                     <li><a href="#"><b>| 夏日涼伴 |</b></a> </li>
                     <li><a href="#"><b>| 關於我們 |</b></a> </li>
                 </ul>
@@ -439,7 +442,7 @@
                     <div style="background-color:rgb(255, 255, 255);border-radius:99;width:100vw;height:200px;" class="box"></div>
                     <div style="background-color:rgb(255, 255, 255);border-radius:99;width:100vw;height:200px;" class="box"></div>
                     <div style="background-color:rgb(255, 255, 255);border-radius:99;width:100vw;height:200px;" class="box"></div>
-                    <img class="menu1" style="position:absolute;left:25%;top:12.5%;width:50%" src="./img/hot-menu.png"
+                    <img class="menu1" style="position:absolute;left:25%;top:12.5%;width:50%" src="./img/coffee-menu.png"
                         alt="">
                 </div>
                 <div id="bp2" class="bg_parallax2">
@@ -448,7 +451,7 @@
                     <div style="background-color:rgb(255, 255, 255);border-radius:99;width:100vw;height:200px;" class="box2"></div>
                     <div style="background-color:rgb(255, 255, 255);border-radius:99;width:100vw;height:200px;" class="box2"></div>
                     <div style="background-color:rgb(255, 255, 255);border-radius:99;width:100vw;height:200px;" class="box2"></div>
-                    <img class="menu2" style="position:absolute;left:25%;top:12.5%;width:50%" src="./img/coffee-menu.png"
+                    <img class="menu2" style="position:absolute;left:25%;top:12.5%;width:50%" src="./img/hot-menu.png"
                         alt="">
                 </div>
                 <div id="bp3" class="bg_parallax3">
@@ -540,7 +543,7 @@
 
 
             // console.log(scrollTop);
-            if (scrollTop > window_height * 2 - 160) {
+            if (scrollTop > window_height * 2 - 50) {
 
                 document.querySelector(".nav-pic").classList.add("up");
                 TweenMax.staggerTo(".box2", 2, {
@@ -553,7 +556,7 @@
                 document.querySelector(".nav-pic").classList.remove("up");
             }
 
-            if (scrollTop > window_height * 3 - 160) {
+            if (scrollTop > window_height * 3 - 50) {
                 TweenMax.staggerTo(".box3", 2, {
                     width: 0,
                     ease: Power2.easeOut,
@@ -575,7 +578,7 @@
                 /*當卷軸滾動超過定點時，執行以下程式*/
                 document.querySelector('.navbar').classList.add('fixed');
                 document.querySelector('#mobile-navbar').classList.add('fixed-menu');
-                document.querySelector('#bp1').classList.add('fixed');
+                document.querySelector('.bg_parallax1').classList.add('active');
                 TweenMax.staggerTo(".box", 2, {
                     width: 0,
                     ease: Power2.easeOut,
@@ -594,7 +597,7 @@
                 // console.log("87");
                 document.querySelector('.navbar').classList.remove('fixed');
                 document.querySelector('#mobile-navbar').classList.remove('fixed-menu');
-                document.querySelector('#bp1').classList.remove('fixed');
+                document.querySelector('.bg_parallax1').classList.remove('active');
             }
         }
         function picTest() {
