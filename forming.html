@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="zh_tw">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>真香</title>
+    <style>
+        body{
+            margin: 0;
+        }
+    .haha img{
+        width: 100%;
+        height: 100vh;
+    }
+    .haha.active{
+        display: none;
+    }
+    .qqqq.active{
+        display: block;
+        
+    }
+    .qqqq{
+        display: none;
+    }
+    .qqqq img{
+        width: 100%;
+        height: 100vh;
+    }
+    </style>
+</head>
+<body>
+    <div class="haha">
+        <img class="img1" src="./1.jpg" alt="">
+    </div>
+    <div class="qqqq">
+        <img src="./2.jpg" alt="">
+        <audio id="music" src="./嘿嘿嘿.mp3"></audio>
+    </div>
+    <script>
+    var img1 = document.querySelector(".img1");
+    var haha = document.querySelector(".haha");
+    var qqqq = document.querySelector(".qqqq");
+    var audio = document.getElementById("music");
+    window.onmousedown = function(){
+        haha.classList.toggle("active");
+        qqqq.classList.toggle("active");
+        audio.currentTime = 0;
+        audio.play();
+    }
+    window.onmouseup = function(){
+        haha.classList.toggle("active");
+        qqqq.classList.toggle("active");
+        audio.pause();
+    }
+    </script>
+</body>
+</html>
